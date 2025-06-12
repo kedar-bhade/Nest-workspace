@@ -6,5 +6,6 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
+USER node
 EXPOSE ${PORT}
 CMD ["node", "dist/main.js"]
