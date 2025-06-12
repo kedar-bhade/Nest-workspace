@@ -97,6 +97,25 @@ $ npm run test:cov
 * [Lint Staged](https://github.com/okonet/lint-staged)
 
 
+## Project Structure
+
+This workspace provides a small GraphQL example. The main source files are located in the `src` directory:
+
+* **`AppModule`** – root module that registers `GraphQLModule` with automatic schema generation.
+* **`AppResolver`** – GraphQL resolver with a `hello` query returning `"Hello World!"`.
+* **`main.ts`** – bootstraps the NestJS application and starts listening on the configured port.
+
+To test the resolver, run the application and execute:
+
+```graphql
+query {
+  hello
+}
+```
+
+Docker-related files reside in the `docker` directory. The `docker/init-mongo.sh` script initializes MongoDB as referenced by `docker-compose.yml`.
+
+
 ## Author
 
 * **Fernando Henriques** - [GitHub](https://github.com/fernandohenriques)
